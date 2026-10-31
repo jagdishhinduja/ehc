@@ -1,0 +1,100 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e5]:
+    - generic [ref=f4e7]:
+      - link "EventHub" [ref=f4e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f4e13]:
+        - link "Home" [ref=f4e14] [cursor=pointer]:
+          - /url: /
+        - link "Events" [ref=f4e15] [cursor=pointer]:
+          - /url: /events
+        - link "My Bookings" [ref=f4e16] [cursor=pointer]:
+          - /url: /bookings
+        - link "API Docs" [ref=f4e17] [cursor=pointer]:
+          - /url: https://api.eventhub.rahulshettyacademy.com/api/docs
+        - button "Admin" [ref=f4e19] [cursor=pointer]
+        - generic [ref=f4e22]:
+          - generic "rahulshetty1@gmail.com" [ref=f4e23]
+          - button "Logout" [ref=f4e24] [cursor=pointer]
+  - main [ref=f4e25]:
+    - generic [ref=f4e26]:
+      - generic [ref=f4e27]:
+        - generic [ref=f4e28]:
+          - heading "My Bookings" [level=1] [ref=f4e29]
+          - paragraph [ref=f4e30]: View and manage all your ticket bookings
+        - generic [ref=f4e31]:
+          - button "Clear all bookings" [ref=f4e32] [cursor=pointer]
+          - paragraph [ref=f4e33]: Do this often for clean test data.
+      - generic [ref=f4e35]:
+        - generic [ref=f4e36]:
+          - generic [ref=f4e37]:
+            - generic [ref=f4e38]:
+              - generic [ref=f4e39]: D-ECU00U
+              - generic [ref=f4e40]: confirmed
+              - generic [ref=f4e41]: "#44769"
+            - heading "Dilli Diwali Mela" [level=3] [ref=f4e42]
+            - generic [ref=f4e43]:
+              - generic [ref=f4e44]: 📅 20 Oct 2026
+              - generic [ref=f4e45]: 🎫 1 ticket
+              - generic [ref=f4e46]: 📍 Delhi
+              - generic [ref=f4e47]: 🗓 Booked 30 Oct 2026
+          - generic [ref=f4e48]:
+            - paragraph [ref=f4e49]: $300
+            - paragraph [ref=f4e50]: total
+        - generic [ref=f4e51]:
+          - link [ref=f4e52] [cursor=pointer]:
+            - /url: /bookings/44769
+            - button "View Details" [ref=f4e53]
+          - button "Cancel Booking" [ref=f4e54] [cursor=pointer]
+  - contentinfo [ref=f4e55]:
+    - generic [ref=f4e56]:
+      - generic [ref=f4e57]:
+        - generic [ref=f4e58]:
+          - heading "Rahul Shetty Academy" [level=3] [ref=f4e59]
+          - paragraph [ref=f4e60]: India's leading QA automation training academy — empowering engineers to build real-world testing skills.
+        - generic [ref=f4e61]:
+          - heading "Popular Courses" [level=3] [ref=f4e62]
+          - list [ref=f4e63]:
+            - listitem [ref=f4e64]:
+              - link "Selenium WebDriver with Java" [ref=f4e65] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=f4e66]:
+              - link "Playwright with JavaScript" [ref=f4e67] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=f4e68]:
+              - link "RestAssured API Testing" [ref=f4e69] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=f4e70]:
+              - link "Cypress End-to-End Testing" [ref=f4e71] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=f4e72]:
+              - link "Appium Mobile Testing" [ref=f4e73] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+        - generic [ref=f4e74]:
+          - heading "QA Job Hiring Platform" [level=3] [ref=f4e75]
+          - paragraph [ref=f4e76]: Get hired faster — take skill assessments trusted by top QA employers worldwide.
+          - link "techsmarthire.com →" [ref=f4e77] [cursor=pointer]:
+            - /url: https://techsmarthire.com
+        - generic [ref=f4e78]:
+          - heading "EventHub Practice App" [level=3] [ref=f4e79]
+          - list [ref=f4e80]:
+            - listitem [ref=f4e81]:
+              - link "Browse Events" [ref=f4e82] [cursor=pointer]:
+                - /url: /events
+            - listitem [ref=f4e83]:
+              - link "My Bookings" [ref=f4e84] [cursor=pointer]:
+                - /url: /bookings
+            - listitem [ref=f4e85]:
+              - link "Manage Events" [ref=f4e86] [cursor=pointer]:
+                - /url: /admin/events
+            - listitem [ref=f4e87]:
+              - link "API Documentation" [ref=f4e88] [cursor=pointer]:
+                - /url: https://api.eventhub.rahulshettyacademy.com/api/docs
+      - generic [ref=f4e89]:
+        - paragraph [ref=f4e90]: © 2026 Rahul Shetty Academy. All rights reserved.
+        - generic [ref=f4e91]:
+          - link "rahulshettyacademy.com →" [ref=f4e92] [cursor=pointer]:
+            - /url: https://rahulshettyacademy.com
+          - link "techsmarthire.com →" [ref=f4e93] [cursor=pointer]:
+            - /url: https://techsmarthire.com
+  - alert [ref=f4e4]
