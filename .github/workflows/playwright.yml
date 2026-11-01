@@ -66,18 +66,19 @@ jobs:
       # ── Run all Playwright tests ─────────────────────────────────────────────
       # Tests run against the live site defined in playwright.config.ts.
       # --reporter=html,line gives a browsable HTML report + inline line output.
-      # `|| true` ensures the artifact upload step always runs even if tests fail.
+      # A test failure fails the job; the upload step below still runs, so the report is available for failed runs too.
       - name: Run Playwright tests
         run: npx playwright test --reporter=html,line
-        continue-on-error: true
 
       # ── Upload HTML report as artifact ───────────────────────────────────────
       # The report is generated in playwright-report/ by the html reporter.
       # Retained for 30 days so the team can review results after a run.
+      # `!cancelled()` uploads on pass or fail, but skips superseded runs.
       - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ !cancelled() }}
         with:
           name: playwright-report-${{ github.run_id }}
           path: playwright-report/
+          if-no-files-found: warn
           retention-days: 30
