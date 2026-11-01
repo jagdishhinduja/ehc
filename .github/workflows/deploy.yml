@@ -53,12 +53,41 @@ env:
 jobs:
 
   # ╔═══════════════════════════════════════════════════════════════════════════
+  # ║  JOB 0 – DEPLOY GATE
+  # ║  Secrets can't be referenced in job-level `if:`, so this job reports
+  # ║  whether the SSH secrets exist. In forks/mirrors without them, the
+  # ║  remaining jobs are skipped instead of failing.
+  # ╚═══════════════════════════════════════════════════════════════════════════
+  deploy-gate:
+    name: Check deploy secrets
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.check.outputs.enabled }}
+    steps:
+      - name: Check for deploy secrets
+        id: check
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        run: |
+          if [ -n "$SERVER_HOST" ] && [ -n "$SERVER_USER" ] && [ -n "$SERVER_SSH_KEY" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Deploy secrets not configured for this repository; skipping deployment."
+          fi
+
+
+  # ╔═══════════════════════════════════════════════════════════════════════════
   # ║  JOB 1 – PRE-DEPLOY CHECKS
   # ║  Reuses the entire ci.yml workflow as a mandatory gate before deploying.
   # ║  Deployment will not start unless ALL CI jobs pass.
   # ╚═══════════════════════════════════════════════════════════════════════════
   pre-deploy-checks:
     name: Pre-deploy CI Checks
+    needs: deploy-gate
+    if: needs.deploy-gate.outputs.enabled == 'true'
     # Call the reusable CI workflow defined in ci.yml
     uses: ./.github/workflows/ci.yml
     # `secrets: inherit` passes all secrets from this workflow to ci.yml
